@@ -11,7 +11,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ "ubuntu-latest" ]
+        # Single configuration only.
+        # This is intentionally a matrix to centralize build parameters.
+        # Do not add additional entries here.
+        os: ["ubuntu-latest"]
+        librdkafka_version: ["1.4.4"]
+        zeek_kafka_version: ["1.2.0"]
     permissions:
       contents: write
       packages: write
@@ -123,5 +128,8 @@ jobs:
           push: true
           file: ./src/Dockerfile
           platforms: linux/amd64,linux/arm64
+          build-args: |
+            LIBRDKAFKA_VERSION=${{ matrix.LIBRDKAFKA_VERSION }}
+            ZEEK_KAFKA_VERSION=${{ matrix.ZEEK_KAFKA_VERSION }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

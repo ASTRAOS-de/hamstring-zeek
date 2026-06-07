@@ -19,6 +19,9 @@ RUN cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/v
 # Stage 2: Final runtime image
 FROM zeek/zeek:8.0
 
+ARG LIBRDKAFKA_VERSION=1.4.4
+ARG ZEEK_KAFKA_VERSION=1.2.0
+
 # Combine package installation, builds, and cleanup in a single RUN
 # This ensures build tools like cmake and gcc don't bloat the final layer size
 RUN apt update -y && apt upgrade -y && apt install -y \
@@ -31,14 +34,14 @@ RUN apt update -y && apt upgrade -y && apt install -y \
     vim \
     pkg-config \
     iproute2 \
-    && curl -fsSL https://github.com/edenhill/librdkafka/archive/refs/tags/v1.4.4.tar.gz -o /tmp/librdkafka.tar.gz \
+    && curl -fsSL https://github.com/edenhill/librdkafka/archive/refs/tags/v${LIBRDKAFKA_VERSION}.tar.gz -o /tmp/librdkafka.tar.gz \
     && tar -xzf /tmp/librdkafka.tar.gz -C /tmp \
-    && cd /tmp/librdkafka-1.4.4 \
+    && cd /tmp/librdkafka-${LIBRDKAFKA_VERSION} \
     && ./configure --prefix=/usr/local \
     && make -j"$(nproc)" \
     && make install \
     && ldconfig \
-    && yes | zkg install seisollc/zeek-kafka --version v1.2.0 --user-var LIBRDKAFKA_ROOT=/usr/local \
+    && yes | zkg install seisollc/zeek-kafka --version v${ZEEK_KAFKA_VERSION} --user-var LIBRDKAFKA_ROOT=/usr/local \
     && setcap cap_net_raw,cap_net_admin=+eip $(which zeek) \
     && apt-get remove --purge -y build-essential cmake curl pkg-config \
     && apt-get autoremove -y \
