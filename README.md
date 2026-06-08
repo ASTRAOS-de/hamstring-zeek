@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/hamstring-ndr/hamstring">
+  <a href="https://github.com/ASTRAOS-de/hamstring">
     <img src="https://avatars.githubusercontent.com/u/185810374?s=200&v=4" alt="Logo">
   </a>
 
@@ -12,9 +12,9 @@
     Zeek based module to ingest data in the main Hamstring application based on Apache Kafka queues.
     <br />
     <br>
-    <a href="https://github.com/hamstring-ndr/hamstring/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/ASTRAOS-de/hamstring/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/hamstring-ndr/hamstring/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/ASTRAOS-de/hamstring/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 <br>
@@ -22,11 +22,11 @@
 <tr>
   <td><b>Continuous Integration</b></td>
   <td>
-    <a href="https://github.com/hamstring-ndr/hamstring-zeek/actions/workflows/build_test_linux.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/hamstring-ndr/hamstring-zeek/build_test_linux.yml?branch=main&logo=linux&style=for-the-badge&label=linux" alt="Linux WorkFlows" />
+    <a href="https://github.com/ASTRAOS-de/hamstring-zeek/actions/workflows/build_test_linux.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/ASTRAOS-de/hamstring-zeek/build_test_linux.yml?branch=main&logo=linux&style=for-the-badge&label=linux" alt="Linux WorkFlows" />
     </a>
-    <a href="https://github.com/hamstring-ndr/hamstring-zeek/actions/workflows/build_test_macos.yml">
-    <img src="https://img.shields.io/github/actions/workflow/status/hamstring-ndr/hamstring-zeek/build_test_macos.yml?branch=main&logo=apple&style=for-the-badge&label=macos" alt="MacOS WorkFlows" />
+    <a href="https://github.com/ASTRAOS-de/hamstring-zeek/actions/workflows/build_test_macos.yml">
+    <img src="https://img.shields.io/github/actions/workflow/status/ASTRAOS-de/hamstring-zeek/build_test_macos.yml?branch=main&logo=apple&style=for-the-badge&label=macos" alt="MacOS WorkFlows" />
     </a>
   </td>
 </tr>
@@ -41,7 +41,7 @@
 ```sh
 docker compose up
 ```
-Please note that in order for the module to work, you need to have an instance of Hamstring running. To do so, please refer to the [official hamstring repository](https://github.com/Hamstring-NDR/hamstring).
+Please note that in order for the module to work, you need to have an instance of Hamstring running. To do so, please refer to the [official hamstring repository](https://github.com/ASTRAOS-de/hamstring).
 
 ## Building
 

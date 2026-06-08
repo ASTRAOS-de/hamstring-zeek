@@ -116,7 +116,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: ghcr.io/hamstring-ndr/hamstring-zeek
+          images: ghcr.io/ASTRAOS-de/hamstring-zeek
           tags: |
             type=raw,value=latest
             type=raw,value=${{ steps.versioning.outputs.version }}
