@@ -3,6 +3,9 @@ services:
     build:
       context: ./
       dockerfile: ./src/Dockerfile
+      args:
+        LIBRDKAFKA_VERSION: 2.0.0
+        ZEEK_KAFKA_VERSION: 0.1.0
     cap_add:
       - NET_ADMIN
     network_mode: host
